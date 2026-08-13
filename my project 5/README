@@ -1,0 +1,67 @@
+# 4-to-2 Encoder using Verilog
+
+## Project Overview
+
+An Encoder is a combinational logic circuit that converts multiple input lines
+into a smaller number of output lines.
+
+This project implements a **4-to-2 Encoder**, where only one input should be HIGH
+at a time.
+
+## Inputs
+
+- D0
+- D1
+- D2
+- D3
+
+## Outputs
+
+- Y1
+- Y0
+
+## Truth Table
+
+| D3 | D2 | D1 | D0 | Y1 | Y0 |
+|----|----|----|----|----|----|
+| 0 | 0 | 0 | 1 | 0 | 0 |
+| 0 | 0 | 1 | 0 | 0 | 1 |
+| 0 | 1 | 0 | 0 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 1 | 1 |
+
+## Boolean Equations
+
+Y1 = D2 + D3
+
+Y0 = D1 + D3
+
+## Files Included
+
+- encoder.v              : Verilog source code
+- tb_encoder.v           : Testbench
+- simulation_output.txt  : Simulation output
+- waveform.png           : Waveform screenshot
+- README.md              : Documentation
+
+## Software Required
+
+- Icarus Verilog
+- GTKWave
+- ModelSim
+- Vivado
+
+## Compile
+
+iverilog -o encoder encoder.v tb_encoder.v
+
+## Run
+
+vvp encoder
+
+## View Waveform
+
+gtkwave encoder.vcd
+
+## Expected Result
+
+The simulation verifies the correct binary encoding for each valid input.
